@@ -1,0 +1,18 @@
+<?php
+
+namespace App\Http\Controllers;
+
+use Illuminate\Http\Request;
+
+class UserController extends Controller
+{
+    function index() {
+
+        return view('dashboard.user.dashboard');
+    }
+
+    function profile() {
+
+        return view('dashboard.user.profile');
+    }
+}
