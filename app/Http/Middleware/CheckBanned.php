@@ -24,7 +24,7 @@ class CheckBanned
     
                 $request->session()->regenerateToken();
     
-                return redirect()->route('login')->with('error', 'Please wait for your account to be approve');
+                return redirect()->route('login')->with('error', 'Sila tunggu akaun untuk disahkan');
     
         } elseif(auth()->check() && (auth()->user()->status == 2)){
                 Auth::logout();
@@ -33,7 +33,7 @@ class CheckBanned
     
                 $request->session()->regenerateToken();
     
-                return redirect()->route('login')->with('error', 'Your Account have been rejected');
+                return redirect()->route('login')->with('error', 'Akaun anda telah ditolak');
         }
     
         return $next($request);

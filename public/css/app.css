@@ -1,0 +1,51 @@
+    /* Set height of the grid so .sidenav can be 100% (adjust if needed) */
+    .row.content {height: 1150px}
+    /* Set gray background color and 100% height */
+    .sidenav {
+      background-color: #333;
+      height: 100%;
+    }
+    .sidenav a{
+      color: white;
+    }
+    .sidenav a:hover {
+  background-color: white;
+  color:black;
+}
+
+    /* On small screens, set height to 'auto' for sidenav and grid */
+    @media screen and (max-width: 767px) {
+      .sidenav {
+        height: auto;
+        padding: 15px;
+      }
+      .row.content {height: auto;} 
+    }
+
+
+    .btn {
+    padding: 5px 22px; /* Add some padding */
+    margin: 5px;
+    align:center;
+    cursor: pointer; /* Add a pointer cursor on mouse-over */
+    }
+
+    h3{
+      color: white;
+    }
+    h4{
+      display: flex;
+      justify-content: center;
+    }
+    input[type=search] {
+    width: 100%;
+    direction: ltr;
+    }
+    form {
+    display: flex;
+    }
+    .info {background-color: #2196F3;} /* Blue */
+    .info:hover {background: #0b7dda;}
+
+    .danger {background-color: #f44336;} /* Red */
+    .danger:hover {background: #da190b;}

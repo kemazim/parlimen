@@ -5,7 +5,6 @@ namespace App\Http\Controllers\Auth;
 use App\Http\Controllers\Controller;
 use App\Providers\RouteServiceProvider;
 use Illuminate\Foundation\Auth\AuthenticatesUsers;
-use Illuminate\Support\Facades\Auth;
 use Illuminate\Http\Request;
 
 class LoginController extends Controller
@@ -56,7 +55,7 @@ class LoginController extends Controller
         $input =$request->all();
         $this->validate($request,[
             'email'=>'required|email',
-            'password'=>'required',
+            'password'=>'required|min:8',
         ]);
 
         if(auth()->attempt(array('email'=>$input['email'],'password'=>$input['password']))) {
@@ -69,11 +68,10 @@ class LoginController extends Controller
         
         } elseif (Auth()->user()->peranan==1) {
             return redirect()->route('user.dashboard');
+        } 
         
-        } else {
-            return redirect()->route('login')->with('error','Email and password are wrong');
-        }
-    }
+    } else 
+    return redirect()->route('login')->with('error','Email atau Kata Laluan tidak sah');
     }
     
 }

@@ -8,15 +8,17 @@ use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
 use Laravel\Sanctum\HasApiTokens;
 
+
 class User extends Authenticatable
 {
     use HasApiTokens, HasFactory, Notifiable;
 
     /**
      * The attributes that are mass assignable.
-     *
+     * 
      * @var array<int, string>
      */
+
     protected $fillable = [
         'nomborKadPengenalan',
         'nama',
@@ -24,6 +26,9 @@ class User extends Authenticatable
         'nomborTelefonBimbit',
         'peranan',
         'password',
+        'gred_id',
+        'pejabat_id',
+        'noTelPej',
     ];
 
     /**
@@ -46,7 +51,7 @@ class User extends Authenticatable
     ];
     public function getPerananStringAttribute()
     {
-    switch ($this->peranan) {
+    switch ($this->peranan) { 
             case 1:
             return "Pengguna";
             break;
@@ -59,16 +64,27 @@ class User extends Authenticatable
     }
 }
 
-public function getStatusStringAttribute()
+    public function getStatusStringAttribute()
     {
-    switch ($this->status) {
+        switch ($this->status) {
             case 0:
-            return "Tidak aktif";
-            break;
+                return "Tidak aktif";
+                break;
             case 1:
-            return "Aktif";
-            break;
+                return "Aktif";
+                break;
+            case 2:
+                return "Permohonan ditolak";
+                break;
 
+        }
     }
-}
+    public function gred()
+    {
+        return $this->belongsTo(Gred::class,'gred_id','id');
+    }
+    public function pejabat()
+    {
+        return $this->belongsTo(Pejabat::class,'pejabat_id','id');
+    }
 }
