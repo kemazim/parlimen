@@ -39,12 +39,12 @@
 			<li><a class="nav-link" href="/admin/questionAnswerApproval">Kelulusan Soalan </a></li>
 		</ul>
 	</li>
-	<li class="nav-item">
+  <li class="nav-item">
 		<a class="nav-link" href="#"> Kemaskini </a>
-	</li>
-
-    <li class="nav-item">
-		<a class="nav-link" href="#"> Hubungi Kami </a>
+        <ul class="submenu collapse">
+			<li><a class="nav-link" href="/admin/parlimenList">Kemaskini Parlimen</a></li>
+            <li><a class="nav-link" href="/admin/ybList">Kemaskini Yang Berhormat</a></li>
+		</ul>
 	</li>
 
         <li><form action="{{ route('logout') }}" method="post">

@@ -61,6 +61,25 @@ form {
   box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.24);
 }
 
+@media screen and (max-width: 768px) {
+  /* Adjust styles for screens smaller than 768px */
+  input[type=text], input[type=password], input[type=email] {
+    width: 100%;
+  }
+  a {
+    width: 100%;
+  }
+  .card {
+    max-width: 80%;
+  }
+}
+
+@media screen and (max-width: 576px) {
+  /* Adjust styles for screens smaller than 576px */
+  .card {
+    max-width: 100%;
+  }
+}
 </style>
 </head>
 
@@ -90,10 +109,6 @@ form {
                  <br>
                   <br>
                   <br>
-
-                
-
-
                 </div>
             </div>
         </div>

@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
+<head> 
   <title>Dashboard</title>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -47,10 +47,6 @@
 			<li><a class="nav-link" href="/admin/parlimenList">Kemaskini Parlimen</a></li>
             <li><a class="nav-link" href="/admin/ybList">Kemaskini Yang Berhormat</a></li>
 		</ul>
-	</li>
-
-    <li class="nav-item">
-		<a class="nav-link" href="#"> Hubungi Kami </a>
 	</li>
 
         <li><form action="{{ route('logout') }}" method="post">
